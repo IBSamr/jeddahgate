@@ -1,0 +1,8 @@
+import {sqliteTable,text,integer} from "drizzle-orm/sqlite-core";
+export const settings=sqliteTable("settings",{id:text("id").primaryKey(),value:text("value").notNull(),updated:text("updated").notNull()});
+export const records=sqliteTable("records",{id:text("id").primaryKey(),kind:text("kind").notNull(),name:text("name").notNull(),email:text("email").notNull(),phone:text("phone").notNull(),payload:text("payload").notNull(),status:text("status").notNull(),tokenHash:text("token_hash").notNull(),created:text("created").notNull(),archived:integer("archived").notNull().default(0)});
+export const events=sqliteTable("events",{id:text("id").primaryKey(),recordId:text("record_id").notNull(),status:text("status").notNull(),note:text("note").notNull(),created:text("created").notNull()});
+export const versions=sqliteTable("versions",{id:text("id").primaryKey(),value:text("value").notNull(),created:text("created").notNull()});
+export const conversations=sqliteTable("conversations",{id:text("id").primaryKey(),messages:text("messages").notNull(),updated:text("updated").notNull()});
+export const notifications=sqliteTable("notifications",{id:text("id").primaryKey(),recordId:text("record_id").notNull(),channel:text("channel").notNull(),status:text("status").notNull(),detail:text("detail").notNull(),created:text("created").notNull()});
+export const limits=sqliteTable("limits",{id:text("id").primaryKey(),count:integer("count").notNull(),expires:integer("expires").notNull()});

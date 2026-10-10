@@ -1,0 +1,2 @@
+export const dynamic="force-dynamic";
+import {getConfig} from "../../lib/store";export async function GET(){const c=await getConfig();return new Response(`User-agent: *\n${c.seo.indexing?"Allow: /\nDisallow: /admin\nDisallow: /seo\nDisallow: /api/\nDisallow: /ar/track\nDisallow: /en/track\nDisallow: /ar/chat\nDisallow: /en/chat":"Disallow: /"}\nSitemap: ${c.seo.domain}/sitemap.xml\n`,{headers:{"Content-Type":"text/plain"}})}

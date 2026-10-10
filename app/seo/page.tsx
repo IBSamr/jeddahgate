@@ -1,0 +1,1 @@
+import Admin from "../../components/admin";import "../admin.css";export const metadata={title:"SEO & GEO | Jeddah Gate",robots:{index:false,follow:false}};export default function Page(){return <Admin seo/>}
