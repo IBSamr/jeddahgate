@@ -223,10 +223,10 @@
 .header nav a.offers-nav-link:before{content:"✦";color:var(--yellow);font-size:11px;margin-inline-end:5px}
 
 
-/* Header brand: keep the complete uploaded logo visible without cropping. */
-.header-inner{min-width:0}.brand{flex:0 1 auto;min-width:0;max-width:32%;}.brand-symbol{display:flex;align-items:center;justify-content:flex-start;min-width:0;max-width:100%;}.brand-symbol img{display:block;width:auto;height:var(--logo-height,62px);max-height:72px;max-width:min(260px,30vw);object-fit:contain;object-position:center;flex-shrink:1}.brand-wordmark{min-width:0}.brand-wordmark strong,.brand-wordmark small{overflow-wrap:anywhere}
-@media(max-width:800px){.brand{max-width:45%;}.brand-symbol img{height:min(var(--logo-height,62px),54px);max-height:54px;max-width:42vw}}
-@media(max-width:420px){.brand{max-width:42%;}.brand-symbol img{max-width:38vw;height:48px}}
+/* Header logo: show exactly one variant at a time and stretch it to its logo slot. */
+.header-inner{min-width:0}.brand{flex:0 1 auto;min-width:0;max-width:32%;}.brand-symbol{display:flex;align-items:center;justify-content:flex-start;width:100%;min-width:0;max-width:100%;}.brand-symbol img{display:block;width:100%;height:var(--logo-height,62px);max-height:72px;object-fit:fill;object-position:center;flex-shrink:1}.brand-symbol .mobile-logo{display:none}.brand-wordmark{min-width:0}.brand-wordmark strong,.brand-wordmark small{overflow-wrap:anywhere}
+@media(max-width:800px){.brand{max-width:45%;}.brand-symbol .desktop-logo{display:none}.brand-symbol .mobile-logo{display:block;width:100%;height:min(var(--logo-height,62px),54px);max-height:54px;object-fit:fill}}
+@media(max-width:420px){.brand{max-width:42%;}.brand-symbol .mobile-logo{height:48px}}
 
 /* Center the عروضنا hero action independently from the authorization ribbon. */
 .hero-top-badges{inset-inline-start:0;inset-inline-end:0;width:100%;max-width:none;justify-content:center;padding-inline:18px;pointer-events:none}
