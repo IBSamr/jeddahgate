@@ -23,3 +23,14 @@ The `middleware` deprecation warning is not the cause of this build failure. Thi
 
 ## v9 startup-path fix
 The Dockerfile copies the contents of `.next/standalone` into `/app`, which places the generated server at `/app/server.js`. The startup script now imports `../server.js` from `/app/scripts/render-start.mjs` rather than the nonexistent `/app/.next/standalone/server.js`.
+
+
+## Admin panel credentials (Railway)
+
+In Railway → your service → Variables, set these server-side variables (do not add them to client-side code):
+
+- `ADMIN_USER=admin`
+- `ADMIN_PASSWORD=New@12345`
+- `ADMIN_SESSION_SECRET=` followed by a long, unique random secret (at least 32 characters)
+
+Redeploy after saving the variables. The admin login is at `/admin`. For a public production site, replace the requested password with a unique strong password after initial access; never commit real secrets to the repository. The login intentionally fails closed when `ADMIN_PASSWORD` or `ADMIN_SESSION_SECRET` is missing.
