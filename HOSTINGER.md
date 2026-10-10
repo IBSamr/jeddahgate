@@ -4,7 +4,7 @@ This is a server-backed application. Use a Hostinger Node.js-capable plan or VPS
 
 ## Node.js deployment
 
-1. Install Node.js 22.13 or newer (24 LTS recommended), and pnpm 10.12.1.
+1. Install Node.js 22.13 or newer (24 LTS recommended), and pnpm 10.26.0.
 2. Upload or clone the repository and run `pnpm install --frozen-lockfile`.
 3. Configure the variables below in the hosting environment. Keep secrets outside public files.
 4. Run `node scripts/hostinger-init.mjs` to apply the versioned SQLite migrations.

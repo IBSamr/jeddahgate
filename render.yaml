@@ -3,7 +3,7 @@ services:
     name: jeddah-gate-agency
     runtime: node
     plan: starter
-    buildCommand: corepack enable && corepack prepare pnpm@10.12.1 --activate && pnpm install --frozen-lockfile && pnpm build
+    buildCommand: corepack enable && corepack prepare pnpm@10.26.0 --activate && pnpm install --frozen-lockfile && pnpm build
     startCommand: node scripts/render-start.mjs
     healthCheckPath: /api/config
     envVars:
