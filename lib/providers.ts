@@ -1,0 +1,1 @@
+import {runtime,query} from "./store";import {decrypt} from "./google";export async function providerEnv(){const e=await runtime();const row=await query("SELECT value FROM settings WHERE id='provider-secrets'",[],"first");if(!row)return e;return {...e,...JSON.parse(await decrypt(row.value))};}
