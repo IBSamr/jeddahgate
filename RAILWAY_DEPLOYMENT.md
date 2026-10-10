@@ -6,10 +6,11 @@ This project already has database migrations under `drizzle/`. Its current schem
 
 ## 1. Deploy the code
 
-1. Extract this ZIP into a new GitHub repository (keep the project files at the repository root).
-2. Push the repository to GitHub.
-3. In Railway, create a project and choose **Deploy from GitHub Repo**; select the repository.
-4. Railway should read `railway.json`. Build command: `pnpm build`. Start command: `pnpm start`.
+1. Extract this ZIP into a new GitHub repository. This ZIP is **flat-root**: `package.json`, `railway.json`, `app/`, `components/`, and `public/` must appear directly at the repository root, not inside another `jeddah/` directory.
+2. In Railway service settings, leave **Root Directory** blank (repository root) for this flat ZIP. Do not set it to `/jeddah`.
+3. Push the repository to GitHub.
+4. In Railway, create a project and choose **Deploy from GitHub Repo**; select the repository.
+5. Railway should read `railway.json`. Build command: `corepack enable && corepack prepare pnpm@10.26.0 --activate && pnpm install --frozen-lockfile && pnpm build`. Start command: `pnpm start`.
 5. Use Node.js 22.13 or newer.
 
 ## 2. Add persistent storage
