@@ -19,3 +19,7 @@ The failed deployment log says Next.js cannot resolve them even though they exis
 
 ## Note
 The `middleware` deprecation warning is not the cause of this build failure. This environment could not run the full build verification because Corepack could not download pnpm from the npm registry, so the archive is not represented as build-tested.
+
+
+## v9 startup-path fix
+The Dockerfile copies the contents of `.next/standalone` into `/app`, which places the generated server at `/app/server.js`. The startup script now imports `../server.js` from `/app/scripts/render-start.mjs` rather than the nonexistent `/app/.next/standalone/server.js`.
